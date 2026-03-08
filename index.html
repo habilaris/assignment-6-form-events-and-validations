@@ -31,7 +31,7 @@
         <h3 class="text-5xl mb-2">Task 1</h3>
         <h4 class="text-2xl">Prevent Form Submission</h4>
       </div>
-      <fieldset class="border w-[30dvw] px-10 py-5 rounded-2xl">
+      <fieldset class="border w-[max(30dvw, 400px)] px-10 py-5 rounded-2xl">
         <legend
           class="font-light text-md tracking-widest text-neutral-200 -mb-2 px-4"
         >
@@ -39,28 +39,48 @@
         </legend>
         <form onsubmit="handleSubmit(event)">
           <!-- Name -->
-          <label for="name" class="pl-5 text-2xl"
-            >Enter your Name: <span class="text-red-400">*</span></label
-          >
-          <input
-            type="text"
-            id="name"
-            placeholder="John Doe"
-            class="bg-neutral-800 block rounded-xl pl-10 py-2 mt-2 mb-2 outline-none text-2xl w-full"
-          />
+          <div>
+            <label for="name" class="pl-5 text-2xl"
+              >Enter your Name: <span class="text-red-400">*</span></label
+            >
+            <input
+              type="text"
+              id="name"
+              placeholder="John Doe"
+              class="bg-neutral-800 block rounded-xl pl-10 py-2 mt-2 mb-2 outline-none text-2xl w-full"
+              onchange="handleChange(event)"
+            />
+            <div id="name-error-mssg"></div>
+          </div>
           <!-- Email -->
-          <label for="email" class="pl-5 text-2xl"
-            >Enter your Email: <span class="text-red-400">*</span></label
-          >
-          <input
-            type="email"
-            id="email"
-            placeholder="johndoe@gmail.com"
-            class="bg-neutral-800 block rounded-xl pl-10 py-2 my-2 mb-5 outline-none text-2xl w-full"
-          />
+          <div>
+            <label for="email" class="pl-5 text-2xl"
+              >Create Email: <span class="text-red-400">*</span></label
+            >
+            <input
+              type="text"
+              id="email"
+              placeholder="johndoe@gmail.com"
+              class="bg-neutral-800 block rounded-xl pl-10 py-2 my-2 mb-2 outline-none text-2xl w-full"
+              onchange="handleChange()"
+            />
+            <div id="email-error-mssg"></div>
+          </div>
+          <!-- Password -->
+          <div>
+            <label for="password" class="pl-5 text-2xl"
+              >Create Password: <span class="text-red-400">*</span></label
+            >
+            <input
+              type="password"
+              id="password"
+              placeholder="••••••••"
+              class="bg-neutral-800 block rounded-xl pl-10 py-2 my-2 mb-5 outline-none text-2xl w-full"
+            />
+          </div>
           <button
             type="submit"
-            class="w-full h-12 bg-neutral-700 rounded-xl mt-2 mb-4 hover:bg-neutral-600 cursor-pointer transition-all"
+            class="w-full h-12 bg-neutral-700 rounded-xl mt-2 mb-4 hover:bg-neutral-600 cursor-pointer transition-all outline-none"
           >
             Submit
           </button>
@@ -69,18 +89,6 @@
     </section>
     <hr />
 
-    <script>
-      let name = document.getElementById("name");
-
-      function handleSubmit(event) {
-        event.preventDefault();
-        let nameValue = name.value;
-        if (nameValue == "") {
-          window.alert("Name Required");
-        } else {
-          window.alert("Form Submitted Successfully");
-        }
-      }
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
