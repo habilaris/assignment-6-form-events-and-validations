@@ -20,9 +20,46 @@ function handleSubmit(event) {
   }
 }
 
-// function handleChange(event) {
-//   //   let nameValue = name.value;
-//   let emailValue = event.value;
-//   //   let passwordValue = password.value;
-//   console.log(emailValue);
-// }
+let email_err_mssg = document.getElementById("email-error-mssg");
+email.addEventListener("input", () => {
+  let emailValue = email.value;
+  if (!emailValue.includes("@")) {
+    email_err_mssg.innerHTML =
+      "<p class='text-red-400 text-xl mb-2'>Email must contain an '@'</p>";
+    setTimeout(() => {
+      email_err_mssg.innerHTML = "";
+    }, 6000);
+  } else {
+    email_err_mssg.innerHTML =
+      "<p class='text-green-500 text-xl mb-2'>Email is valid now!</p>";
+    setTimeout(() => {
+      email_err_mssg.innerHTML = "";
+    }, 3000);
+  }
+});
+
+let password_err_mssg = document.getElementById("password-error-mssg");
+password.addEventListener("input", () => {
+  let passwordValue = password.value;
+  if (passwordValue.length < 6) {
+    password_err_mssg.innerHTML =
+      "<p class='text-red-400 text-xl mb-2'>Password must be 6 atleast characters long...</p>";
+    setTimeout(() => {
+      password_err_mssg.innerHTML = "";
+    }, 6000);
+  } else {
+    password_err_mssg.innerHTML =
+      "<p class='text-green-500 text-xl mb-2'>Password is valid now!</p>";
+    setTimeout(() => {
+      password_err_mssg.innerHTML = "";
+    }, 3000);
+  }
+});
+
+let reset_btn = document.getElementById("reset-btn");
+reset_btn.addEventListener("click", (event) => {
+  event.preventDefault();
+  name.value = "";
+  email.value = "";
+  password.value = "";
+});

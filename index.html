@@ -21,17 +21,10 @@
     <hr />
 
     <!-- Task 1 -->
-    <section
-      class="h-screen flex flex-col justify-center items-center relative"
-    >
-      <div
-        id="task-title"
-        class="flex flex-col items-center absolute top-10 text-neutral-300"
-      >
-        <h3 class="text-5xl mb-2">Task 1</h3>
-        <h4 class="text-2xl">Prevent Form Submission</h4>
-      </div>
-      <fieldset class="border w-[max(30dvw, 400px)] px-10 py-5 rounded-2xl">
+    <section class="h-screen flex flex-col justify-center items-center">
+      <h3 class="text-5xl">Assignment 6 Tasks</h3>
+
+      <fieldset class="border w-110 px-10 py-5 rounded-2xl mt-5">
         <legend
           class="font-light text-md tracking-widest text-neutral-200 -mb-2 px-4"
         >
@@ -48,9 +41,7 @@
               id="name"
               placeholder="John Doe"
               class="bg-neutral-800 block rounded-xl pl-10 py-2 mt-2 mb-2 outline-none text-2xl w-full"
-              onchange="handleChange(event)"
             />
-            <div id="name-error-mssg"></div>
           </div>
           <!-- Email -->
           <div>
@@ -62,7 +53,6 @@
               id="email"
               placeholder="johndoe@gmail.com"
               class="bg-neutral-800 block rounded-xl pl-10 py-2 my-2 mb-2 outline-none text-2xl w-full"
-              onchange="handleChange()"
             />
             <div id="email-error-mssg"></div>
           </div>
@@ -77,17 +67,23 @@
               placeholder="••••••••"
               class="bg-neutral-800 block rounded-xl pl-10 py-2 my-2 mb-5 outline-none text-2xl w-full"
             />
+            <div id="password-error-mssg"></div>
           </div>
           <button
             type="submit"
-            class="w-full h-12 bg-neutral-700 rounded-xl mt-2 mb-4 hover:bg-neutral-600 cursor-pointer transition-all outline-none"
+            class="w-full h-10 bg-neutral-700 rounded-xl mt-2 mb-4 hover:bg-neutral-600 cursor-pointer transition-all outline-none text-2xl"
           >
             Submit
+          </button>
+          <button
+            id="reset-btn"
+            class="w-full h-10 bg-red-500 rounded-xl mt-2 mb-4 hover:bg-red-400 cursor-pointer transition-all outline-none text-2xl"
+          >
+            Reset
           </button>
         </form>
       </fieldset>
     </section>
-    <hr />
 
     <script src="script.js"></script>
   </body>
