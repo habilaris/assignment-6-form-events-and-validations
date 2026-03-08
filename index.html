@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="dist/output.css" />
+  </head>
+  <body class="text-3xl bg-neutral-900 text-neutral-200">
+    <section class="h-screen flex flex-col justify-center items-center">
+      <fieldset class="border px-10 py-5 rounded-2xl">
+        <legend
+          class="font-light text-md tracking-widest text-neutral-200 -mb-2 px-4"
+        >
+          Made by Habil Aris
+        </legend>
+        <h1 class="text-7xl mb-4">SMIT Batch 4 Assignment 6</h1>
+        <h2 class="text-6xl font-light">Form Events and Validation</h2>
+      </fieldset>
+    </section>
+    <hr />
+
+    <!-- Task 1 -->
+    <section
+      class="h-screen flex flex-col justify-center items-center relative"
+    >
+      <div
+        id="task-title"
+        class="flex flex-col items-center absolute top-10 text-neutral-300"
+      >
+        <h3 class="text-5xl mb-2">Task 1</h3>
+        <h4 class="text-2xl">Prevent Form Submission</h4>
+      </div>
+      <fieldset class="border w-[30dvw] px-10 py-5 rounded-2xl">
+        <legend
+          class="font-light text-md tracking-widest text-neutral-200 -mb-2 px-4"
+        >
+          Form
+        </legend>
+        <form onsubmit="handleSubmit(event)">
+          <!-- Name -->
+          <label for="name" class="pl-5 text-2xl"
+            >Enter your Name: <span class="text-red-400">*</span></label
+          >
+          <input
+            type="text"
+            id="name"
+            placeholder="John Doe"
+            class="bg-neutral-800 block rounded-xl pl-10 py-2 mt-2 mb-2 outline-none text-2xl w-full"
+          />
+          <!-- Email -->
+          <label for="email" class="pl-5 text-2xl"
+            >Enter your Email: <span class="text-red-400">*</span></label
+          >
+          <input
+            type="email"
+            id="email"
+            placeholder="johndoe@gmail.com"
+            class="bg-neutral-800 block rounded-xl pl-10 py-2 my-2 mb-5 outline-none text-2xl w-full"
+          />
+          <button
+            type="submit"
+            class="w-full h-12 bg-neutral-700 rounded-xl mt-2 mb-4 hover:bg-neutral-600 cursor-pointer transition-all"
+          >
+            Submit
+          </button>
+        </form>
+      </fieldset>
+    </section>
+    <hr />
+
+    <script>
+      let name = document.getElementById("name");
+
+      function handleSubmit(event) {
+        event.preventDefault();
+        let nameValue = name.value;
+        if (nameValue == "") {
+          window.alert("Name Required");
+        } else {
+          window.alert("Form Submitted Successfully");
+        }
+      }
+    </script>
+  </body>
+</html>
